@@ -1,0 +1,26 @@
+﻿<h3>Update</h3>
+
+<EditForm Model="GamerForm" OnSubmit="SendGamer">
+    <DataAnnotationsValidator />
+    <div class="form-control form-control-sm">
+        Pseudo : <InputText @bind-Value="GamerForm.Pseudo" />
+        <ValidationMessage For="() => GamerForm.Pseudo" />
+    </div>
+    <div class="form-control form-control-sm">
+        Email : <InputText @bind-Value="GamerForm.Email" />
+        <ValidationMessage For="() => GamerForm.Email" />
+    </div>
+    <div class="form-control form-control-sm">
+        Date De Naissance : <InputDate @bind-Value="GamerForm.DateDeNaissance" />
+        <ValidationMessage For="() => GamerForm.DateDeNaissance" />
+    </div>
+    <div class="form-control form-control-sm">
+        Password : <InputText @bind-Value="GamerForm.Password" />
+        <ValidationMessage For="() => GamerForm.Password" />
+    </div>
+    <button type="submit" class="btn btn-success btn-sm">Valider</button>
+    <ValidationSummary />
+</EditForm>
+@code {
+
+}

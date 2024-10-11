@@ -1,0 +1,14 @@
+﻿@using DemoWASM.Models;
+<h3>ListGamer</h3>
+
+@if (List.Count > 0)
+{
+    @foreach (KeyValuePair<int, Gamer> gamer in List)
+    {
+        <GamerCard Pseudo="@gamer.Value.Pseudo" Id="gamer.Value.Id" Details="SendEventDetails" Update="SendEventUpdate"></GamerCard>
+    }
+}
+
+@code {
+
+}

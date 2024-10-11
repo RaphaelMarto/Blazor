@@ -1,0 +1,19 @@
+﻿<h3>Bonjour @name, voici la question n°@nb</h3>
+
+<div>
+    <p>
+        @question
+    </p>
+</div>
+
+@{
+    <div>
+        <button class="btn btn-info" @onclick="@(() => EnvoiReponse("Oui"))">Oui</button>
+        <button class="btn btn-info" @onclick="@(() => EnvoiReponse("Non"))">Non</button>
+    </div>
+}
+
+
+@code {
+
+}

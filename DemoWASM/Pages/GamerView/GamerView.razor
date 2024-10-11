@@ -1,0 +1,36 @@
+﻿@page "/gamer"
+<PageTitle>Gamer</PageTitle>
+<h3>GamerList</h3>
+
+<div class="row">
+    <div class="col-5">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Pseudo</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ListGamer List="ListGamerView" EventActionDetails="getActionDetails" EventActionUpdate="getActionUpdate"></ListGamer>
+            </tbody>
+        </table>
+    </div>
+     <div class="col-6">
+        <div>
+            <AjoutGamer Id="ListGamerView.Count" NewGamer="addNewGamer"></AjoutGamer>
+        </div>
+        @if(Details == true)
+        {
+            <Details gamer="_CurrentGamer"></Details>
+        }
+
+        @if(Update == true)
+        {
+            <Update GamerForm="_CurrentGamer" UpdateGamer="UpdateGamer"></Update>
+        }
+    </div>
+</div>
+@code {
+
+}

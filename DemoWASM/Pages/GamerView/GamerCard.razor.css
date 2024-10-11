@@ -1,0 +1,7 @@
+﻿.GamerCard {
+    border: solid black 2px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    margin-bottom: 5px;
+}

@@ -1,0 +1,38 @@
+﻿@page "/quiz"
+<PageTitle>Quiz</PageTitle>
+
+<h1>Quiz</h1>
+
+<div hidden="@(!string.IsNullOrEmpty(Name) && NbMax != 0)" class="col-md-4">
+    <label>Nom :</label>
+    <input type="text" @bind-value="@Name" />
+    <br />
+    <label>Nombre de question :</label>
+    <select @bind="NbMax">
+        <option value="0" selected>----Selectionez----</option>
+        @for(int i = 0;i<ListQuestion.Count;i++)
+        {
+            <option value="@(i+1)">@(i+1)</option>
+        }
+    </select>
+</div>
+
+@if ((!string.IsNullOrEmpty(Name) && NbMax != 0) && !End)
+{
+    <Question name="@Name" nb="@Nb" question="@ListQuestion[Nb]" ReponseQuestion="getChildResponse" />
+}
+
+@if(Responses.Count != 0)
+{
+    @foreach (string res in Responses)
+    {
+        <p>@res</p>
+    }
+}
+
+<button hidden="@(!End)" class="btn btn-primary" @onclick="@(() => RefreshComponent())">New Quiz</button>
+
+
+@code {
+    
+}

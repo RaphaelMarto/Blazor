@@ -1,0 +1,19 @@
+﻿@page "/addGame"
+@attribute [Authorize]
+<h3>Add Game</h3>
+<EditForm Model="GameForm" OnValidSubmit="SendGame">
+    <DataAnnotationsValidator />
+    <div class="form-control form-control-sm">
+        Titre : <InputText @bind-Value="GameForm.Title" />
+        <ValidationMessage For="() => GameForm.Title" />
+    </div>
+    <div class="form-control form-control-sm">
+        Synopsis : <InputText @bind-Value="GameForm.Synopsis" />
+        <ValidationMessage For="() => GameForm.Synopsis" />
+    </div>
+    <div class="form-control form-control-sm">
+        Date De sortie : <InputNumber @bind-Value="GameForm.ReleaseYear" />
+        <ValidationMessage For="() => GameForm.ReleaseYear" />
+    </div>
+    <button class="btn btn-success btn-sm">Valider</button>
+</EditForm>
